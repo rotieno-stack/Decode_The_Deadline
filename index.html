@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Decode the Deadline</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <main class="page">
+
+    <header class="masthead">
+      <p class="kicker">A Caltech REA puzzle</p>
+      <h1 class="title">Decode the Deadline</h1>
+      <p class="subtitle">Fill the grid. The diagonal holds the moment decisions release.</p>
+    </header>
+
+    <section class="board">
+      <div class="grid-panel">
+        <div class="grid" id="grid"></div>
+
+        <div class="keypad" id="keypad">
+          <!-- digit buttons injected by script.js -->
+        </div>
+
+        <p class="hint-row">
+          <button class="ghost-btn" id="hint-btn" type="button">Hint for selected cell</button>
+        </p>
+      </div>
+
+      <aside class="side-panel">
+        <h2 class="panel-heading">Clues</h2>
+        <ol class="clue-list" id="clue-list"></ol>
+      </aside>
+    </section>
+
+    <section class="log-panel">
+      <h2 class="panel-heading">Log</h2>
+      <div class="log" id="log">
+        <p class="log-line log-line--muted">Select a cell, then choose a digit.</p>
+      </div>
+    </section>
+
+    <section class="reveal" id="reveal" hidden>
+      <p class="reveal-kicker">Grid complete</p>
+      <p class="reveal-time" id="reveal-time"></p>
+      <p class="reveal-sub">REA decisions release at this moment.</p>
+    </section>
+
+  </main>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
